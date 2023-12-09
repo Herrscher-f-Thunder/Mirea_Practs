@@ -46,36 +46,6 @@ public class LinkedQueue extends AbstractQueue implements Queue {
         size = 0;
     }
 
-    public void push(Object element) {
-        assert element != null;
-        tail = new Node(element, tail, null);
-        if(tail.prev != null) {
-            tail.prev.next = tail;
-        }
-        if (size == 0) {
-            head = tail;
-        }
-        size++;
-    }
-
-    public Object peek() {
-        assert size > 0;
-        return head.value;
-    }
-
-    public Object remove() {
-        assert size > 0;
-        Object ret = peek();
-        if (head.next != null) {
-            head = head.next;
-            head.prev = null;
-        } else {
-            head = null;
-        }
-        size--;
-        return ret;
-    }
-
     public int size() {
         return size;
     }
@@ -84,14 +54,4 @@ public class LinkedQueue extends AbstractQueue implements Queue {
         return (size == 0);
     }
 
-    public LinkedQueue makeCopy() {
-        LinkedQueue copy = new LinkedQueue();
-        Node node = tail;
-        while (node != null) {
-            copy.enqueue(node.value);
-            node = node.prev;
-        }
-        copy.size = size;
-        return copy;
-    }
 }

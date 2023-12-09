@@ -51,39 +51,7 @@ public class ArrayQueue extends AbstractQueue implements Queue {
         size = 0;
     }
 
-    public void push(Object element) {
-        assert element != null;
-        fixCapacity(size + 2);
-        head = head - 1;
-        if (head < 0) {
-            head = elements.length - 1;
-        }
-        elements[head] = element;
-        size++;
-    }
-
-    public Object peek() {
-        assert size > 0;
-        int ltail = tail - 1;
-        if (ltail < 0) {
-            ltail = elements.length - 1;
-        }
-        return elements[ltail];
-    }
-
-    public Object remove() {
-        assert size > 0;
-        tail = tail - 1;
-        if (tail < 0) {
-            tail = elements.length - 1;
-        }
-        Object ret = elements[tail];
-        elements[tail] = null;
-        size--;
-        return ret;
-    }
-
-    public int size() {
+       public int size() {
         return size;
     }
 
@@ -91,15 +59,4 @@ public class ArrayQueue extends AbstractQueue implements Queue {
         return (size == 0);
     }
 
-    public ArrayQueue makeCopy() {
-        ArrayQueue copy = new ArrayQueue();
-        copy.elements = new Object[elements.length];
-        for (int i = 0; i < elements.length; i++) {
-            copy.elements[i] = elements[i];
-        }
-        copy.size = size;
-        copy.head = head;
-        copy.tail = tail;
-        return copy;
-    }
 }
