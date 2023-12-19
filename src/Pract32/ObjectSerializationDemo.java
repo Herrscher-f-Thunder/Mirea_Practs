@@ -1,6 +1,5 @@
 package Pract32;
 import java.io.*;
-import java.util.ArrayList;
 
 public class ObjectSerializationDemo {
     public static void main(String[] args) {

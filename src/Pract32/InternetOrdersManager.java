@@ -1,7 +1,7 @@
 package Pract32;
 import java.io.Serializable;
 
-public class InternetOrdersManager extends QueueNode implements Serializable {
+public class    InternetOrdersManager extends QueueNode implements Serializable {
     private QueueNode head;
     private QueueNode tail;
     private int size;

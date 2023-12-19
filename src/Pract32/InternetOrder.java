@@ -2,6 +2,8 @@ package Pract32;
 import java.io.Serializable;
 
 public class InternetOrder implements Order, Serializable {
+    private Node head;
+    private int size;
     public boolean add(Item item) {
         Node node = new Node(item);
         if (head == null) {
@@ -106,8 +108,7 @@ public class InternetOrder implements Order, Serializable {
             prev = null;
         }
     }
-    private Node head;
-    private int size;
+
     public InternetOrder() {
         head = null;
         size = 0;

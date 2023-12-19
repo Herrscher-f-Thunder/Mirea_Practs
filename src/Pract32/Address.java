@@ -7,6 +7,7 @@ public class Address implements Serializable {
     private String streetName;
     private int buildingNumber;
     private char buildingLetter;
+    private int apartmentNumber;
     private Address EMPTY_ADDRESS;
 
     public String getCityName() {
@@ -47,6 +48,14 @@ public class Address implements Serializable {
 
     public void setBuildingLetter(char buildingLetter) {
         this.buildingLetter = buildingLetter;
+    }
+
+    public int getApartmentNumber() {
+        return apartmentNumber;
+    }
+
+    public void setApartmentNumber(int apartmentNumber) {
+        this.apartmentNumber = apartmentNumber;
     }
 
     public Address getEMPTY_ADDRESS() {
